@@ -1,10 +1,12 @@
 <h1>All Paintings</h1>
 
-<% @all_paintings.each do |painting| %>
-  <h2><%= painting.name %></h2>
-  <div><img src="<%= painting.image %>"></div>
-  <p><%= painting.price %></p>
-  <p><%= painting.description %></p>
+<div class="container">
+  <% @all_paintings.each do |painting| %>
+    <h2><%= painting.name %></h2>
+    <div><img src="<%= painting.image %>"></div>
+    <p><%= painting.price %></p>
+    <p><%= painting.description %></p>
   
-  <hr>
-<% end %>
+    <hr>
+  <% end %>
+</div>

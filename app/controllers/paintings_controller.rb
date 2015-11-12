@@ -1,7 +1,7 @@
 class PaintingsController < ApplicationController
 
   def home
-
+  
   end
 
   def allpaintings
@@ -10,6 +10,9 @@ class PaintingsController < ApplicationController
 
   def eachpainting
     @each_painting = Painting.last
+  end
+
+  def purchase
   end
 
 end
