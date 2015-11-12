@@ -4,6 +4,7 @@ class PaintingsController < ApplicationController
   end
 
   def paintings
+    @paintings = Painting.all
   end
-  
+
 end
