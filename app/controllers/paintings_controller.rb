@@ -1,6 +1,7 @@
 class PaintingsController < ApplicationController
 
   def home
+
   end
 
   def allpaintings
