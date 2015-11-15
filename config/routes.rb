@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get '/' => 'paintings#home'
   get '/paintings' => 'paintings#index'
+  get '/paintings/new' => 'paintings#new'
+  post '/paintings' => 'paintings#create'
   get '/paintings/:id' => 'paintings#show'
 
 
