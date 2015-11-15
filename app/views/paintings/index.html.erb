@@ -1,12 +1,10 @@
 <h1>All Paintings</h1>
 
-<div class="container">
-  <% @all_paintings.each do |painting| %>
-    <h2><a href="/paintings/<%= painting.id %>"><%= painting.name %></a></h2>
-    <div><img src="<%= painting.image %>"></div>
-    <p><%= painting.price %></p>
-    <p><%= painting.description %></p>
+<% @all_paintings.each do |painting| %>
+  <h2><a href="/paintings/<%= painting.id %>"><%= painting.name %></a></h2>
+  <div><img src="<%= painting.image %>"></div>
+  <p><%= painting.price %></p>
+  <p><%= painting.description %></p>
   
-    <hr>
-  <% end %>
-</div>
+  <hr>
+<% end %>
