@@ -13,10 +13,10 @@ class PaintingsController < ApplicationController
 
   def create
     @painting = Painting.create(
-      name: params[:input_name],
-      image: params[:input_image],
-      price: params[:input_price],
-      description: params[:input_description]
+      name: params[:name],
+      image: params[:image],
+      price: params[:price],
+      description: params[:description]
       )
   end
 
