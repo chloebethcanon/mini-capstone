@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get '/' => 'paintings#home'
   get '/paintings' => 'paintings#index'
-  get '/paintings/each' => 'paintings#eachpainting'
+  get '/paintings/:id' => 'paintings#show'
+
+
   get '/paintings/purchase' => 'paintings#purchase'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

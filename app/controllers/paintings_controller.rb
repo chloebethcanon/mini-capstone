@@ -8,8 +8,9 @@ class PaintingsController < ApplicationController
     @all_paintings = Painting.all
   end
 
-  def eachpainting
-    @each_painting = Painting.last
+  def show
+    painting_id = params[:id]
+    @painting = Painting.find_by(id: painting_id)
   end
 
   def purchase

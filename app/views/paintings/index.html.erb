@@ -2,7 +2,7 @@
 
 <div class="container">
   <% @all_paintings.each do |painting| %>
-    <h2><%= painting.name %></h2>
+    <h2><a href="/paintings/<%= painting.id %>"><%= painting.name %></a></h2>
     <div><img src="<%= painting.image %>"></div>
     <p><%= painting.price %></p>
     <p><%= painting.description %></p>
