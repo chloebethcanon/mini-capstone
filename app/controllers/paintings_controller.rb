@@ -13,7 +13,7 @@ class PaintingsController < ApplicationController
   end
 
   def create
-    @painting = Painting.create(
+    painting = Painting.create(
       name: params[:name],
       image: params[:image],
       price: params[:price],
@@ -29,19 +29,19 @@ class PaintingsController < ApplicationController
   end
 
   def update
-    @painting = Painting.find_by(id: params[:id])
-    @painting.update(
+    painting = Painting.find_by(id: params[:id])
+    painting.update(
       name: params[:name],
       image: params[:image],
       price: params[:price],
       description: params[:description]
       )
-    redirect_to "/paintings/#{@painting.id}"
+    redirect_to "/paintings/#{painting.id}"
   end
 
   def destroy
-    @painting = Painting.find_by(id: params[:id])
-    @painting.delete
+    painting = Painting.find_by(id: params[:id])
+    painting.delete
     redirect_to '/paintings'
   end
 
