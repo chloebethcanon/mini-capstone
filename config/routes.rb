@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  get '/' => 'paintings#home'
   get '/paintings' => 'paintings#index'
   get '/paintings/new' => 'paintings#new'
   post '/paintings' => 'paintings#create'
   get '/paintings/:id' => 'paintings#show'
+  get '/paintings/:id/edit' => 'paintings#edit'
+  patch '/paintings/:id' => 'paintings#update'
+  delete '/paintings/:id' => 'paintings#destroy'
 
-
-  get '/paintings/purchase' => 'paintings#purchase'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
