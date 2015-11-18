@@ -1,10 +1,19 @@
 <h1>All Paintings</h1>
 
-<% @all_paintings.each do |painting| %>
-  <h2><a href="/paintings/<%= painting.id %>"><%= painting.name %></a></h2>
-  <div><img src="<%= painting.image %>"></div>
-  <p><%= painting.price %></p>
-  <p><%= painting.description %></p>
+<div class="row">
+  <% @all_paintings.each do |painting| %>
+    <div class="col-md-4">
+      <div class="well">
+          <h2><a href="/paintings/<%= painting.id %>"><%= painting.name %></a></h2>
+          <div><img src="<%= painting.image %>" class="img-rounded">
+            <p><%= painting.price %></p>
+            <p><%= painting.description %></p>
+         </div> 
+      </div>
+    </div>      
   
+  <% end %>
+</div>
+
 <%= link_to "Create a new listing", "/paintings/new" %>  
-<% end %>
+
