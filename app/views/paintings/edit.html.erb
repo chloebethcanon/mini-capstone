@@ -16,6 +16,10 @@
     <%= label_tag :description %>
     <%= text_field_tag :description, @painting.description, class: "form-control" %>
   </div>
+  <div class="form-group">
+    <%= label_tag :stock %>
+    <%= text_field_tag :stock, nil, class: "form-control", placeholder: "If out of stock, enter false" %>
+  </div>
   <div>
     <%= button_tag 'Submit', class: "btn btn_default" %>
   </div>

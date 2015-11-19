@@ -5,15 +5,15 @@
     <div class="col-md-4">
       <div class="well">
           <h2><a href="/paintings/<%= painting.id %>"><%= painting.name %></a></h2>
-          <div><img src="<%= painting.image %>" class="img-rounded">
-            <p><%= painting.price %></p>
-            <p><%= painting.description %></p>
-         </div> 
+          <img src="<%= painting.image %>" class="img img-rounded img-responsive full-width index-thumb">
+            <p>$<%= painting.price %></p>
+            <ul>
+              <% painting.description_list.each do |description| %>
+                <li><%= description %></li>
+              <% end %>
+            </ul>
       </div>
     </div>      
   
   <% end %>
 </div>
-
-<%= link_to "Create a new listing", "/paintings/new" %>  
-

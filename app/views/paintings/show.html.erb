@@ -1,7 +1,11 @@
 <h2><%= @painting.name %></h2>
 <div><img src="<%= @painting.image %>"></div>
-<p><%= @painting.price %></p>
+<p><%= @painting.stock %></p>
+<p>$<%= @painting.price %></p>
+<p>Tax: $<%= @painting.tax %></p>
+<p>Total Price: $<%= @painting.total_price %></p>
 <p><%= @painting.description %></p>
+<p><%= @painting.sale_message %></p>
 <p><%= link_to "Edit this listing", "/paintings/#{@painting.id}/edit" %></p>
 <p><%= link_to "Delete this listing", "/paintings/#{@painting.id}", method: :delete %></p>
 <p><a href="/paintings">Back to all paintings</p>
