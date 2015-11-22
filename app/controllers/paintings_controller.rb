@@ -2,11 +2,30 @@ class PaintingsController < ApplicationController
 
   def index
     @all_paintings = Painting.all
+
+    sort_attribute = params[:sort]
+    sort_order = params[:sort_order]
+    search_attribute = params[:search]
+    # if params[:sort] == "random"
+    #   @all_paintings = []
+    #   @all_paintings << Painting.order("RAND()").first
+    if params[:sort] == "discount_price" 
+      @all_paintings = Painting.where("price <= ?", 100)
+    elsif search_attribute   
+      @all_paintings = Painting.where("name LIKE ? OR description LIKE ?", "%#{search_attribute}%", "%#{search_attribute}%")
+    elsif sort_attribute && sort_order
+      @all_paintings = Painting.order(sort_attribute => sort_order)
+    end
+      
   end
 
   def show
     painting_id = params[:id]
-    @painting = Painting.find_by(id: painting_id)
+    if params[:id] == "random"
+      @painting = Painting.order("RAND()").first
+    else  
+      @painting = Painting.find_by(id: painting_id)
+    end
   end
 
   def new
