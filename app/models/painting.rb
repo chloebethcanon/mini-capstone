@@ -1,5 +1,7 @@
 class Painting < ActiveRecord::Base
 
+  belongs_to :supplier
+
   def description_list
     description.split(", ")
   end
