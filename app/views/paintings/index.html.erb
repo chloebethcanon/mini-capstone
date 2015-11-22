@@ -3,8 +3,8 @@
 <div class="row">
   <% @all_paintings.each do |painting| %>
     <div class="col-md-4">
-      <div class="well">
-          <h2><a href="/paintings/<%= painting.id %>"><%= painting.name %></a></h2>
+      <a href="/paintings/<%= painting.id %>"><div class="well">
+          <h2><%= painting.name %></h2>
           <img src="<%= painting.image %>" class="img img-rounded img-responsive full-width index-thumb">
             <p>$<%= painting.price %></p>
             <ul>
@@ -12,7 +12,7 @@
                 <li><%= description %></li>
               <% end %>
             </ul>
-      </div>
+      </div></a>
     </div>      
   
   <% end %>
