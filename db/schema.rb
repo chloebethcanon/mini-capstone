@@ -14,13 +14,13 @@
 ActiveRecord::Schema.define(version: 20151119032108) do
 
   create_table "paintings", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "price"
-    t.string   "image"
-    t.text     "description"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.boolean  "stock",       default: true
+    t.string   "name",        limit: 255
+    t.integer  "price",       limit: 4
+    t.string   "image",       limit: 255
+    t.text     "description", limit: 65535
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.boolean  "stock",                     default: true
   end
 
 end
