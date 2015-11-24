@@ -6,7 +6,7 @@
       <a href="/paintings/<%= painting.id %>"><div class="well">
           <h2><%= painting.name %></h2>
           <h6>Artist: <%= painting.supplier.name %></h6>
-          <img src="<%= painting.image %>" class="img img-rounded img-responsive full-width index-thumb">
+          <img src="<%= painting.images.first.image %>" class="img img-rounded img-responsive full-width index-thumb">
             <p>$<%= painting.price %></p>
             <ul>
               <% painting.description_list.each do |description| %>

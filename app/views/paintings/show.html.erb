@@ -1,5 +1,17 @@
 <h2><%= @painting.name %></h2>
-<div><img src="<%= @painting.image %>" class="index-thumb"></div>
+<div class="row">
+  <% @painting.images.each do |image| %>
+    <div class="col-md-4">
+      <img src="<%= image.image %>" class="img img-rounded img-responsive full-width index-thumb">
+    </div>
+  <% end %>
+</div>
+
+
+
+
+
+
 <p><%= @painting.stock %></p>
 <p>$<%= @painting.price %></p>
 <p>Tax: $<%= @painting.tax %></p>
