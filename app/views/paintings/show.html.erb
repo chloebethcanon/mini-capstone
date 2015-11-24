@@ -19,6 +19,6 @@
 <p><%= @painting.description %></p>
 <p><%= @painting.sale_message %></p>
 <p>Artist: <%= @painting.supplier.name %></p>
-<p><%= link_to "Edit this listing", "/paintings/#{@painting.id}/edit" %></p>
-<p><%= link_to "Delete this listing", "/paintings/#{@painting.id}", method: :delete %></p>
+<p><%= link_to "Edit", "/paintings/#{@painting.id}/edit" %></p>
+<p><%= link_to "Delete", "/paintings/#{@painting.id}", method: :delete %></p>
 <p><a href="/paintings">Back to all paintings</p>
