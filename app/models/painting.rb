@@ -32,5 +32,6 @@ class Painting < ActiveRecord::Base
       "Out of Stock"
     end
   end
+
   
 end

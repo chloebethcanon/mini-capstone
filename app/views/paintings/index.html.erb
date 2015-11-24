@@ -5,6 +5,7 @@
     <div class="col-md-4">
       <a href="/paintings/<%= painting.id %>"><div class="well">
           <h2><%= painting.name %></h2>
+          <h6>Brought to you by: <%= painting.supplier.name %></h6>
           <img src="<%= painting.image %>" class="img img-rounded img-responsive full-width index-thumb">
             <p>$<%= painting.price %></p>
             <ul>
