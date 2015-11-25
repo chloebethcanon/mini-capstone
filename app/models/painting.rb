@@ -2,6 +2,7 @@ class Painting < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :supplier
+  belongs_to :order
   has_many :images
 
 
