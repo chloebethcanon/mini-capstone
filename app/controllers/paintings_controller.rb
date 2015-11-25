@@ -36,7 +36,8 @@ class PaintingsController < ApplicationController
       name: params[:name],
       image: params[:image],
       price: params[:price],
-      description: params[:description]
+      description: params[:description],
+      user_id: current_user.id
       )
     flash[:success] = "Listing was successfully created!"
     redirect_to '/paintings'

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
+  # root to: 'paintings#index'
+  get '/' => 'paintings#index'
   get '/paintings' => 'paintings#index'
   get '/paintings/new' => 'paintings#new'
   post '/paintings' => 'paintings#create'

@@ -32,11 +32,11 @@
           <ul class="dropdown-menu">
             <li><a href="/paintings?sort=price&sort_order=asc">Sort Price: Low to High</a></li>
             <li><a href="/paintings?sort=price&sort_order=desc">Sort Price: High to Low</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">Something</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Something Else</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
           </ul>
         </li>
       </ul>
@@ -52,10 +52,12 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="/users/sign_up">Sign Up</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="/users/sign_in">Sign In</a></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to "Sign Out", "/users/sign_out", method: :delete %></li>
           </ul>
         </li>
       </ul>
@@ -63,16 +65,18 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<% flash.each do |name, message| %>
-  <div class="alert alert-<%= name %> alert-dismissible fade in" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <%= message %>
-  </div>
-<% end %>
+<div class="container">
+  <% flash.each do |name, message| %>
+    <div class="alert alert-<%= name %> alert-dismissible fade in" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <%= message %>
+    </div>
+  <% end %>
 
-  <div class="container">
-    <%= yield %>
-  </div>
+  
+  <%= current_user.id if current_user %>
+  <%= yield %>
+</div>
 
 </body>
 </html>
