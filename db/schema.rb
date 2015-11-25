@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125030531) do
+ActiveRecord::Schema.define(version: 20151125031906) do
 
   create_table "images", force: :cascade do |t|
     t.string   "image",       limit: 255
@@ -21,14 +21,14 @@ ActiveRecord::Schema.define(version: 20151125030531) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer  "user_id",    limit: 4
-    t.integer  "product_id", limit: 4
-    t.integer  "quantity",   limit: 4
-    t.decimal  "subtotal",             precision: 6, scale: 2
-    t.decimal  "tax",                  precision: 6, scale: 2
-    t.decimal  "total",                precision: 6, scale: 2
-    t.datetime "created_at",                                   null: false
-    t.datetime "updated_at",                                   null: false
+    t.integer  "user_id",     limit: 4
+    t.integer  "painting_id", limit: 4
+    t.integer  "quantity",    limit: 4
+    t.decimal  "subtotal",              precision: 6, scale: 2
+    t.decimal  "tax",                   precision: 6, scale: 2
+    t.decimal  "total",                 precision: 6, scale: 2
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
   end
 
   create_table "paintings", force: :cascade do |t|
