@@ -21,4 +21,14 @@
 <p>Artist: <%= @painting.supplier.name %></p>
 <p><%= link_to "Edit", "/paintings/#{@painting.id}/edit" %></p>
 <p><%= link_to "Delete", "/paintings/#{@painting.id}", method: :delete %></p>
-<p><a href="/paintings">Back to all paintings</p>
+<p><a href="/paintings">Back to all paintings</a></p>
+
+<%= form_tag '/orders', method: :post do %>
+  <div class="form-group">
+    <%= label_tag :quantity %>
+    <%= text_field_tag :quantity, nil, class: "form-control" %>
+  </div>
+  <div>
+    <%= button_tag "Buy Now!", class: "btn btn_default" %>
+  </div>
+<% end %>
