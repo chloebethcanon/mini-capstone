@@ -28,6 +28,10 @@
     <%= label_tag :quantity %>
     <%= text_field_tag :quantity, nil, class: "form-control" %>
   </div>
+  <div class="form-group">
+    <%= label_tag :painting_id %>
+    <%= text_field_tag :painting_id, @painting.id, class: "form-control" %>
+  </div>
   <div>
     <%= button_tag "Buy Now!", class: "btn btn_default" %>
   </div>
