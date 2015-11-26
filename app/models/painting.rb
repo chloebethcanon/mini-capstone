@@ -5,6 +5,7 @@ class Painting < ActiveRecord::Base
   has_many :orders
   has_many :images
 
+  SALES_TAX = 0.09
 
   def description_list
     description.split(", ")
@@ -22,13 +23,11 @@ class Painting < ActiveRecord::Base
   end
 
   def tax
-    @tax_amount = price * 0.09
-    sprintf "%.2f", @tax_amount
+    @tax_amount = price * SALES_TAX
   end
 
   def total_price
     total_price = price + @tax_amount
-    sprintf "%.2f", total_price
   end
 
   def in_stock

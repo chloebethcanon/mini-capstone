@@ -13,9 +13,9 @@
 
 
 <p><%= @painting.stock %></p>
-<p>$<%= @painting.price %></p>
-<p>Tax: $<%= @painting.tax %></p>
-<p>Total Price: $<%= @painting.total_price %></p>
+<p>Price: <%= number_to_currency(@painting.price) %></p>
+<p>Tax: <%= number_to_currency(@painting.tax) %></p>
+<p>Total Price: <%= number_to_currency(@painting.total_price) %></p>
 <p><%= @painting.description %></p>
 <p><%= @painting.sale_message %></p>
 <p>Artist: <%= @painting.supplier.name %></p>

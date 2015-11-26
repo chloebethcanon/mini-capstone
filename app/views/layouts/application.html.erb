@@ -74,7 +74,7 @@
   <% end %>
 
   
-  <p> Current User: <%= current_user.id if current_user %></p>
+  <p> Welcome <%= current_user.email if current_user %>!</p>
   <%= yield %>
 </div>
 
