@@ -4,6 +4,7 @@ class Painting < ActiveRecord::Base
   belongs_to :supplier
   has_many :orders
   has_many :images
+  has_many :categorized_paintings
 
   SALES_TAX = 0.09
 
