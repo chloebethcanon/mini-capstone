@@ -3,17 +3,19 @@
 <div class="row">
   <% @all_paintings.each do |painting| %>
     <div class="col-md-4">
-      <a href="/paintings/<%= painting.id %>"><div class="well">
-          <h2><%= painting.name %></h2>
+      <div class="well">
+          <a href="/paintings/<%= painting.id %>">
+            <h2><%= painting.name %></h2></a>
           <h6>Artist: <%= painting.supplier.name %></h6>
-          <img src="<%= painting.images.first.image %>" class="img img-rounded img-responsive full-width index-thumb">
-            <p>$<%= painting.price %></p>
+          <a href="/paintings/<%= painting.id %>">
+            <img src="<%= painting.images.first.image %>" class="img img-rounded img-responsive full-width index-thumb"></a>
+            <p><%= number_to_currency(painting.price) %></p>
             <ul>
               <% painting.description_list.each do |description| %>
                 <li><%= description %></li>
               <% end %>
             </ul>
-      </div></a>
+      </div>
     </div>      
   
   <% end %>

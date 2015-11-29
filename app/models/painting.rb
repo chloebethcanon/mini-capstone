@@ -14,8 +14,6 @@ class Painting < ActiveRecord::Base
   def sale_message
     if price.to_f <= 100.00 
       "Discount Item!"
-    else
-      "On Sale!"
     end
 
     # Another way to write this code:

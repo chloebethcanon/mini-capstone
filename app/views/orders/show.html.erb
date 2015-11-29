@@ -1,2 +1,30 @@
-<p>Order Id: <%= @order.id %></p>
-<p>Order Quantity: <%= @order.quantity %></p>
+<h2><%= @order.painting.name %></h2>
+
+<div class="col-md-5">
+  <img src="<%= @order.painting.images.first.image %>" class="img img-rounded img-responsive full-width index-thumb">
+</div>
+
+<div class="col-md-7">
+  <table class="table table-striped">
+    <tr>
+      <td>Order Id:</td> 
+      <td><%= @order.id %></td>
+    </tr>
+    <tr>  
+      <td>Order Quantity:</td> 
+      <td><%= @order.quantity %></td>
+    </tr>
+    <tr>
+      <td>Subtotal:</td>
+      <td><%= number_to_currency(@order.subtotal) %></td>
+    </tr>
+    <tr>
+      <td>Tax:</td>
+      <td><%= number_to_currency(@order.tax) %></td>
+    </tr>
+    <tr>  
+      <td>Total:</td>
+      <td><%= number_to_currency(@order.total) %></td>
+    </tr>  
+  </table
+</div>
