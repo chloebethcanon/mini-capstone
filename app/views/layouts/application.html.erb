@@ -32,7 +32,12 @@
           <ul class="dropdown-menu">
             <li><a href="/paintings?sort=price&sort_order=asc">Sort Price: Low to High</a></li>
             <li><a href="/paintings?sort=price&sort_order=desc">Sort Price: High to Low</a></li>
-            <li><a href="#">Something</a></li>
+
+            <% Category.all.each do |category| %>
+              <li><a href="/paintings?category=<%= category.name %>"><%= category.name %></a></li>
+            <% end %>
+
+
             <li role="separator" class="divider"></li>
             <li><a href="#">Something Else</a></li>
             <li role="separator" class="divider"></li>

@@ -16,6 +16,10 @@ class PaintingsController < ApplicationController
     elsif sort_attribute && sort_order
       @all_paintings = Painting.order(sort_attribute => sort_order)
     end
+
+    if params[:category]
+      @all_paintings = Category.find_by(name: params[:category]).paintings
+    end
       
   end
 

@@ -36,7 +36,16 @@
         </ul>
     </tr>
     <tr>
-      <td>Availibility</td>
+      <td>Categories:</td>
+      <td>
+        <ul>
+            <% @painting.categories.each do |category| %>
+              <li><%= category.name %></li>
+            <% end %>
+        </ul>
+    </tr>
+    <tr>
+      <td>Availibility:</td>
       <td><%= @painting.stock %></td>
     </tr>
     <tr>

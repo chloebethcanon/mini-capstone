@@ -5,6 +5,7 @@ class Painting < ActiveRecord::Base
   has_many :orders
   has_many :images
   has_many :categorized_paintings
+  has_many :categories, through: :categorized_paintings
 
   SALES_TAX = 0.09
 
