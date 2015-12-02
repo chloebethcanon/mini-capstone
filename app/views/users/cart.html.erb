@@ -1,0 +1,9 @@
+<% @carted_products.each do |carted_product| %>
+  <img src="<%= carted_product.painting.images.first.image %>" class="img img-rounded img-responsive full-width index-thumb">
+<% end %>
+
+
+
+<div>
+  <%= button_to "Buy Now!", "/orders", class: "btn btn_default", method: :post %>
+</div>

@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
 
   def cart
-  end
+    @carted_products = CartedProduct.where(user_id: current_user.id, status: "Carted")
     
+  end
+
 end
