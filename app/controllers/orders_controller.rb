@@ -10,8 +10,6 @@ def create
   total = subtotal + tax
   order = Order.create(
     user_id: current_user.id,
-    quantity: params[:quantity],
-    painting_id: params[:painting_id],
     subtotal: subtotal,
     tax: tax,
     total: total
