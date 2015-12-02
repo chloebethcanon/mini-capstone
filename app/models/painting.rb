@@ -2,7 +2,6 @@ class Painting < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :supplier
-  has_many :orders
   has_many :images
   has_many :categorized_paintings
   has_many :categories, through: :categorized_paintings
