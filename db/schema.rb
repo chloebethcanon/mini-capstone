@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151202005728) do
+ActiveRecord::Schema.define(version: 20151202012145) do
 
   create_table "carted_products", force: :cascade do |t|
-    t.integer  "user_id",    limit: 4
-    t.integer  "product_id", limit: 4
-    t.integer  "quantity",   limit: 4
-    t.string   "status",     limit: 255
-    t.integer  "order_id",   limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.integer  "user_id",     limit: 4
+    t.integer  "painting_id", limit: 4
+    t.integer  "quantity",    limit: 4
+    t.string   "status",      limit: 255
+    t.integer  "order_id",    limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "categories", force: :cascade do |t|
