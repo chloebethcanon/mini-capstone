@@ -5,20 +5,17 @@
 
 <%= form_tag '/orders', method: :post do %>
   <div class="form-group">
-    <%= label_tag :subtotal %>
-    <%= text_field_tag :subtotal, number_to_currency(@subtotal), class: "form-control" %>
+    <%= hidden_field_tag :subtotal, @subtotal, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= label_tag :tax %>
-    <%= text_field_tag :tax, number_to_currency(@tax), class: "form-control" %>
+    <%= hidden_field_tag :tax, @tax, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= label_tag :total %>
-    <%= text_field_tag :total, number_to_currency(@total), class: "form-control" %>
+    <%= hidden_field_tag :total, @total, class: "form-control" %>
+  </div>
+  <div>
+    <%= button_tag "Buy Now!", class: "btn btn_default"%>
   </div>
 <% end %>
 
 
-<div>
-  <%= button_to "Buy Now!", "/orders", class: "btn btn_default", method: :post %>
-</div>

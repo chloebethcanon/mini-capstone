@@ -5,12 +5,13 @@ def create
  
   order = Order.create(
     user_id: current_user.id,
-    subtotal: subtotal,
-    tax: tax,
-    total: total
+    subtotal: params[:subtotal],
+    tax: params[:tax],
+    total: params[:total]
     )
   flash[:success] = "Order successfully created."
   redirect_to "/orders/#{order.id}"
+
 end
 
 def show
