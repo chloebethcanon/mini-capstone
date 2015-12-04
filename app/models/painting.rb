@@ -8,6 +8,12 @@ class Painting < ActiveRecord::Base
   has_many :carted_products
   has_many :orders, through: :carted_products
 
+  validates :name, presence: true
+  validates :price, presence: true
+  validates :price, numericality: true
+  validates :price, numericality: { :greater_than => 0 }
+
+
   SALES_TAX = 0.09
 
   def description_list

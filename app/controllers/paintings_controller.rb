@@ -34,19 +34,28 @@ class PaintingsController < ApplicationController
   end
 
   def new
+    painting = Painting.new
   end
 
   def create
-    painting = Painting.create(
+    painting = Painting.new(
       name: params[:name],
       image: params[:image],
       price: params[:price],
       description: params[:description],
       user_id: current_user.id
       )
-    flash[:success] = "Listing was successfully created!"
-    redirect_to '/paintings'
-    # Because of this redirect, you can delete your create.html.erb file.
+    if painting.save
+      flash[:success] = "Listing was successfully created!"
+      redirect_to '/paintings'
+      # Because of this redirect, you can delete your create.html.erb file.
+    end
+    else
+      # Things went wrong!
+      render :new
+      # If you redirect, you lose your ruby variable just created.
+      # That is why you use render here instead - it keeps what was entered.
+    end  
   end
 
   def edit
