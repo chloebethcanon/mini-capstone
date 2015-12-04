@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
     @cart_count = current_user.carted_products.where(status: "Carted").count
     else
       @cart_count = 0
+    end
   end
 
 end
