@@ -2,7 +2,7 @@ class PaintingsController < ApplicationController
 
   def index
     @all_paintings = Painting.all
-    
+
     sort_attribute = params[:sort]
     sort_order = params[:sort_order]
     search_attribute = params[:search]
@@ -33,6 +33,9 @@ class PaintingsController < ApplicationController
   end
 
   def new
+    unless current_user && current_user.admin
+      redirect_to "/"
+    end
   end
 
   def create
