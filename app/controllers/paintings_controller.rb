@@ -39,40 +39,48 @@ class PaintingsController < ApplicationController
   end
 
   def create
-    painting = Painting.create(
-      name: params[:name],
-      image: params[:image],
-      price: params[:price],
-      description: params[:description],
-      user_id: current_user.id
-      )
-    flash[:success] = "Listing was successfully created!"
-    redirect_to '/paintings'
-    # Because of this redirect, you can delete your create.html.erb file.
+    if current_user && current_user.admin
+      painting = Painting.create(
+        name: params[:name],
+        image: params[:image],
+        price: params[:price],
+        description: params[:description],
+        user_id: current_user.id
+        )
+      flash[:success] = "Listing was successfully created!"
+      redirect_to '/paintings'
+      # Because of this redirect, you can delete your create.html.erb file.
+    end
   end
 
   def edit
-    @painting = Painting.find_by(id: params[:id])
-    # This is exactly the same as lines 8-9 above!
+    if current_user && current_user.admin
+      @painting = Painting.find_by(id: params[:id])
+      # This is exactly the same as lines 8-9 above!
+    end
   end
 
   def update
-    painting = Painting.find_by(id: params[:id])
-    painting.update(
-      name: params[:name],
-      image: params[:image],
-      price: params[:price],
-      description: params[:description]
-      )
-    flash[:success] = "Listing was successfully updated!"
-    redirect_to "/paintings/#{painting.id}"
+    if current_user && current_user.admin
+      painting = Painting.find_by(id: params[:id])
+      painting.update(
+        name: params[:name],
+        image: params[:image],
+        price: params[:price],
+        description: params[:description]
+        )
+      flash[:success] = "Listing was successfully updated!"
+      redirect_to "/paintings/#{painting.id}"
+    end
   end
 
   def destroy
-    painting = Painting.find_by(id: params[:id])
-    painting.delete
-    flash[:success] = "Listing was successfully deleted!"
-    redirect_to '/paintings'
+    if current_user && current_user.admin
+      painting = Painting.find_by(id: params[:id])
+      painting.delete
+      flash[:success] = "Listing was successfully deleted!"
+      redirect_to '/paintings'
+    end
   end
 
 
