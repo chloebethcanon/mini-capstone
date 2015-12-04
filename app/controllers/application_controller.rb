@@ -6,7 +6,10 @@ class ApplicationController < ActionController::Base
   before_action :calculate_cart_count
 
   def calculate_cart_count
+    if current_user
     @cart_count = current_user.carted_products.where(status: "Carted").count
+    else
+      @cart_count = 0
   end
 
 end
