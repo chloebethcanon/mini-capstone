@@ -64,8 +64,10 @@
 
   <table style="border: none; float: right;">
     <tr>
-      <td><%= button_to "Edit", "/paintings/#{@painting.id}/edit", class: "btn btn_default", method: :get %></td>
-      <td><%= button_to "Delete", "/paintings/#{@painting.id}", class: "btn btn_default", method: :delete %></td>
+      <% if current_user && current_user.admin %>
+        <td><%= button_to "Edit", "/paintings/#{@painting.id}/edit", class: "btn btn_default", method: :get %></td>
+        <td><%= button_to "Delete", "/paintings/#{@painting.id}", class: "btn btn_default", method: :delete %></td>
+      <% end %>
       <td><%= button_to "All Paintings", "/paintings", class: "btn btn_default", method: :get %></td>
     </tr>
   </table>
