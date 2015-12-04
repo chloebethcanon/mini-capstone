@@ -49,7 +49,6 @@ class PaintingsController < ApplicationController
       flash[:success] = "Listing was successfully created!"
       redirect_to '/paintings'
       # Because of this redirect, you can delete your create.html.erb file.
-    end
     else
       # Things went wrong!
       render :new
@@ -64,8 +63,8 @@ class PaintingsController < ApplicationController
   end
 
   def update
-    painting = Painting.find_by(id: params[:id])
-    painting.update(
+    @painting = Painting.find_by(id: params[:id])
+    if @painting.update(
       name: params[:name],
       image: params[:image],
       price: params[:price],
@@ -73,6 +72,9 @@ class PaintingsController < ApplicationController
       )
     flash[:success] = "Listing was successfully updated!"
     redirect_to "/paintings/#{painting.id}"
+    else
+      render :edit
+    end
   end
 
   def destroy
