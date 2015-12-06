@@ -1,0 +1,13 @@
+<h1><%= @supplier.name %></h1>
+
+<table class ="table table-striped">
+    <tr>
+      <td><%= @supplier.name %></td>
+      <td><%= @supplier.email %></td>
+      <td><%= @supplier.phone %></td>
+      <td><%= link_to "Edit", "/suppliers/#{@supplier.id}/edit" %></td>
+      <td><%= link_to "Delete", "/suppliers/#{@supplier.id}", method: :delete %></td>
+    </tr>
+</table>
+
+<button class="btn btn-default"><%= link_to "Back to Supplier List", "/suppliers" %></button>

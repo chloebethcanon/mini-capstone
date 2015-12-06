@@ -1,0 +1,16 @@
+<h1>Suppliers</h1>
+
+<button class="btn btn-default"><%= link_to "Add a New Supplier", "/suppliers/new" %></button>
+<br>
+<br>
+<table class="table table-striped">
+  <% @suppliers.each do |supplier| %>
+    <tr>
+      <td><%= link_to "#{supplier.name}", "/suppliers/#{supplier.id}" %></td>
+      <td> </td>
+      <td><%= supplier.email %></td>
+      <td><%= supplier.phone %></td>
+    </tr>
+  <% end %>
+</table>
+
