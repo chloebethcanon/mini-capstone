@@ -88,11 +88,7 @@ class PaintingsController < ApplicationController
 
   # think of these as helper methods (under private)
 
-  def authenticate_admin!
-    unless current_user && current_user.admin
-      redirect_to "/"
-    end
-  end
+  
 
 
 end

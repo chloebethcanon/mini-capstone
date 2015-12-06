@@ -1,5 +1,7 @@
 class SuppliersController < ApplicationController
 
+  before_action :authenticate_admin!
+
   def index
     @suppliers = Supplier.all
   end
@@ -32,5 +34,6 @@ class SuppliersController < ApplicationController
     @supplier.update(active: false)
     redirect_to "/suppliers"
   end
+
 
 end
