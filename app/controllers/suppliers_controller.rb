@@ -18,9 +18,13 @@ class SuppliersController < ApplicationController
   end
 
   def edit
+    @supplier = Supplier.find_by(id: params[:id])
   end
 
   def update
+    @supplier = Supplier.find_by(id: params[:id])
+    @supplier.update(params[:supplier])
+    redirect_to "/suppliers/#{@supplier.id}"
   end
 
   def destroy
