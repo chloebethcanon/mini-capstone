@@ -4,6 +4,7 @@ class SuppliersController < ApplicationController
   end
 
   def new
+    @supplier = Supplier.new
   end
 
   def create
@@ -17,5 +18,5 @@ class SuppliersController < ApplicationController
 
   def destroy
   end
-  
+
 end
