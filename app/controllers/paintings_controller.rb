@@ -34,16 +34,17 @@ class PaintingsController < ApplicationController
   end
 
   def new
-    painting = Painting.new
+    @painting = Painting.new
+    @suppliers = Supplier.where(active: true)
   end
 
   def create
     painting = Painting.new(
       name: params[:name],
-      image: params[:image],
       price: params[:price],
       description: params[:description],
-      user_id: current_user.id
+      user_id: current_user.id,
+      supplier_id: params[:supplier][:supplier_id]
       )
     if painting.save
       flash[:success] = "Listing was successfully created!"
