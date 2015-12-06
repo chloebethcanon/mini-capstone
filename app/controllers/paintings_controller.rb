@@ -67,7 +67,6 @@ class PaintingsController < ApplicationController
     @painting = Painting.find_by(id: params[:id])
     if @painting.update(
       name: params[:name],
-      image: params[:image],
       price: params[:price],
       description: params[:description]
       )
