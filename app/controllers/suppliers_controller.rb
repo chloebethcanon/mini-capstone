@@ -29,7 +29,7 @@ class SuppliersController < ApplicationController
 
   def destroy
     @supplier = Supplier.find_by(id: params[:id])
-    @supplier.destroy
+    @supplier.update(active: false)
     redirect_to "/suppliers"
   end
 
